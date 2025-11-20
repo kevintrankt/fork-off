@@ -50,6 +50,7 @@ function filterAIImages() {
             overlayImage.style.width = '100%';
             overlayImage.style.height = '100%';
             overlayImage.style.objectFit = 'cover';
+            overlayImage.style.opacity = '0.6';
             overlay.appendChild(overlayImage);
 
             overlay.addEventListener('click', () => {
