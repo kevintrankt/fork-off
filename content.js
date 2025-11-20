@@ -46,7 +46,7 @@ function filterAIImages() {
             overlay.style.pointerEvents = 'auto';
 
             const overlayImage = document.createElement('img');
-            overlayImage.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Will_Smith_Eating_Spaghetti_Original.webm/240px--Will_Smith_Eating_Spaghetti_Original.webm.jpg';
+            overlayImage.src = 'https://www.datocms-assets.com/157377/1744427803-658413b8e31f076aa25a8fa0_will-smith-eating-spaghetti.gif';
             overlayImage.style.width = '100%';
             overlayImage.style.height = '100%';
             overlayImage.style.objectFit = 'cover';
