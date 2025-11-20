@@ -1,13 +1,25 @@
+function extractFilestackHandle(src) {
+  try {
+    const url = new URL(src);
+    const parts = url.pathname.split('/').filter(Boolean);
+    return parts[parts.length - 1] || null;
+  } catch {
+    const fallbackMatch = src.match(
+      /filestackcontent\.com\/(?:[^/]+\/)*([^\/\?]+)/,
+    );
+    return fallbackMatch ? fallbackMatch[1] : null;
+  }
+}
+
 function filterAIImages() {
   document.querySelectorAll('div.card-header > div > img').forEach((el) => {
     if (el.dataset.aiChecked) return;
     el.dataset.aiChecked = 'true';
 
     const src = el.src;
-    const handleMatch = src.match(/filestackcontent\.com\/([^\/\?]+)/);
+    const handle = extractFilestackHandle(src);
 
-    if (handleMatch && handleMatch[1]) {
-      const handle = handleMatch[1];
+    if (handle) {
       const metadataUrl = `https://cdn.filestackcontent.com/${handle}/metadata`;
 
       fetch(metadataUrl)
