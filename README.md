@@ -1,6 +1,6 @@
-# Fork off (Chrome extension)
+# Fork off - Will Smith (Chrome extension)
 
-Overlays AI-generated images hosted on Forkable so you know what's up.
+Overlays Will Smith on AI-generated images hosted on Forkable so you know what's up.
 
 <img src="./screenshot.png" width="450" />
 
