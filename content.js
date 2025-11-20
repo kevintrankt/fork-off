@@ -38,16 +38,19 @@ function filterAIImages() {
             overlay.style.left = '0';
             overlay.style.width = '100%';
             overlay.style.height = '100%';
-            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
             overlay.style.display = 'flex';
             overlay.style.alignItems = 'center';
             overlay.style.justifyContent = 'center';
-            overlay.style.color = 'white';
-            overlay.style.fontSize = '14px';
-            overlay.style.fontWeight = 'bold';
             overlay.style.zIndex = '10';
             overlay.style.cursor = 'pointer';
-            overlay.textContent = 'AI generated';
+            overlay.style.pointerEvents = 'auto';
+
+            const overlayImage = document.createElement('img');
+            overlayImage.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Will_Smith_Eating_Spaghetti_Original.webm/240px--Will_Smith_Eating_Spaghetti_Original.webm.jpg';
+            overlayImage.style.width = '100%';
+            overlayImage.style.height = '100%';
+            overlayImage.style.objectFit = 'cover';
+            overlay.appendChild(overlayImage);
 
             overlay.addEventListener('click', () => {
               overlay.style.display =
